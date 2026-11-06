@@ -61,7 +61,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-005 |
-| Related Requirement(s) | FR-001, NFR-Validation |
+| Related Requirement(s) | FR-001, NFR-006 |
 | Title | Login - Empty Required Fields |
 | Preconditions | The user is on the Sign In screen. |
 | Test Steps | 1. Leave email and password empty<br>2. Click "Sign In" |
@@ -75,7 +75,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-006 |
-| Related Requirement(s) | FR-001, NFR-Security |
+| Related Requirement(s) | FR-001, NFR-004 |
 | Title | Role Restriction - Volunteer Cannot Access Coordinator Features |
 | Preconditions | The user is logged in as a Volunteer. |
 | Test Steps | 1. Look for "Post an Opportunity" and "Attendance & Hours" in the navigation<br>2. Try to open the coordinator page directly (URL or menu) |
@@ -89,7 +89,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-007 |
-| Related Requirement(s) | FR-001, NFR-Security |
+| Related Requirement(s) | FR-001, NFR-004 |
 | Title | Role Restriction - Coordinator Cannot Access Administrator Features |
 | Preconditions | The user is logged in as a Coordinator. |
 | Test Steps | 1. Look for "Manage Coordinator Access" and "Program Overview" in the navigation<br>2. Try to open the administrator page directly |
@@ -327,7 +327,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-024 |
-| Related Requirement(s) | FR-006, NFR-Validation |
+| Related Requirement(s) | FR-006, NFR-006 |
 | Title | Create Opportunity - Missing Required Fields |
 | Preconditions | Logged in as a Coordinator. |
 | Test Steps | 1. Open Post an Opportunity<br>2. Leave the title empty and fill other fields<br>3. Click "Post" |
@@ -341,7 +341,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-025 |
-| Related Requirement(s) | FR-006, NFR-Validation |
+| Related Requirement(s) | FR-006, NFR-006 |
 | Title | Create Opportunity - Invalid Date or Capacity |
 | Preconditions | Logged in as a Coordinator. |
 | Test Steps | 1. Open Post an Opportunity<br>2. Enter a past date or a capacity of 0 or a negative number<br>3. Click "Post" |
@@ -411,7 +411,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-030 |
-| Related Requirement(s) | FR-007, NFR-Validation |
+| Related Requirement(s) | FR-007, NFR-006 |
 | Title | Record Hours - Invalid Hours |
 | Preconditions | Logged in as a Coordinator. The event date has passed. |
 | Test Steps | 1. Open the registration list<br>2. Mark a volunteer as attended<br>3. Enter -2, or a letter, or leave empty<br>4. Click "Save" |
@@ -509,7 +509,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-037 |
-| Related Requirement(s) | NFR-Performance |
+| Related Requirement(s) | NFR-001 |
 | Title | Performance - Lists Load Within Two Seconds |
 | Preconditions | Database holds hundreds of opportunities and thousands of records. |
 | Test Steps | 1. Open Browse Opportunities<br>2. Open My Volunteering<br>3. Measure the time to display each page |
@@ -523,7 +523,7 @@
 | Field | Detail |
 |---|---|
 | Test Case ID | TC-038 |
-| Related Requirement(s) | NFR-Reliability |
+| Related Requirement(s) | NFR-003 |
 | Title | Reliability - No Duplicate Records On Rapid Double Click |
 | Preconditions | Logged in as a Volunteer. The opportunity has open spaces. |
 | Test Steps | 1. Double-click "Register" quickly<br>2. Open My Volunteering |
