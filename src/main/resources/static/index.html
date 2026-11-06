@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>VolunTier prototype</title>
+<style>
+body{font-family:Helvetica,Arial,sans-serif;max-width:900px;margin:24px auto;padding:0 12px}
+.card{border:1px solid #bbb;border-radius:6px;padding:10px;margin:8px 0}
+.tag{display:inline-block;background:#dde6f3;border-radius:4px;padding:1px 6px;font-size:12px;margin-right:4px}
+.err{color:#b00020}.ok{color:#176b2c}input,button,select{margin:2px;padding:4px}
+</style></head><body>
+<h1>VolunTier prototype</h1>
+<p>Each panel shows the requirement and the unit test cases that cover it.</p>
+
+<div class="card" id="login">
+  <b>Sign In</b> <span class="tag">FR-001</span><span class="tag">TC-001 to TC-007</span><br>
+  <input id="email" value="volunteer@voluntier.test" size="28">
+  <input id="password" type="password" value="password">
+  <button onclick="login()">Sign In</button>
+  <span id="who"></span><div id="loginMsg"></div>
+</div>
+
+<div class="card">
+  <b>Browse Opportunities</b> <span class="tag">FR-002</span><span class="tag">TC-008 to TC-012</span><br>
+  <input id="search" placeholder="Search"> <input id="category" placeholder="Category">
+  <button onclick="load()">Search</button>
+  <div id="msg"></div><div id="list"></div>
+  <p><span class="tag">FR-003</span><span class="tag">TC-013 to TC-016</span> Register. Capacity and duplicate checks apply.</p>
+</div>
+
+<div class="card" id="post" style="display:none">
+  <b>Post an Opportunity</b> <span class="tag">FR-006</span><span class="tag">TC-023 to TC-027</span><br>
+  <input id="t" placeholder="Title"> <input id="d" placeholder="Description">
+  <input id="c" placeholder="Category"> <input id="s" type="datetime-local">
+  <input id="l" placeholder="Location"> <input id="cap" type="number" placeholder="Capacity" style="width:90px">
+  <button onclick="post()">Post</button><div id="postMsg"></div>
+</div>
+<script>
+let token=null;
+const h=()=>({'Content-Type':'application/json','X-Auth-Token':token||''});
+const show=(id,text,ok)=>{const e=document.getElementById(id);e.textContent=text;e.className=ok?'ok':'err'};
+async function call(url,opt){const r=await fetch(url,opt);const b=r.status===200&&r.headers.get('content-type')?.includes('json')?await r.json():(r.ok?{}:await r.json().catch(()=>({})));return {ok:r.ok,body:b}}
+async function login(){
+  const r=await call('/api/login',{method:'POST',headers:h(),body:JSON.stringify({email:email.value,password:password.value})});
+  if(!r.ok){show('loginMsg',r.body.error,false);return}
+  token=r.body.token;show('loginMsg','',true);who.textContent=' Signed in as '+r.body.email+' ('+r.body.role+')';
+  post.style.display=r.body.role==='COORDINATOR'?'block':'none';load();
+}
+async function load(){
+  const q=new URLSearchParams({search:search.value,category:category.value});
+  const r=await call('/api/opportunities?'+q,{headers:h()});
+  if(!r.ok){show('msg',r.body.error,false);return}
+  list.innerHTML='';
+  if(!r.body.length){show('msg','No opportunities match your search.',false);return}
+  show('msg','',true);
+  r.body.forEach(o=>{const d=document.createElement('div');d.className='card';
+    d.innerHTML=`<b>${o.title}</b> (${o.category})<br>${o.description}<br>${o.start} at ${o.location}<br>Spaces left: ${o.remaining} of ${o.capacity}<br>`;
+    const b=document.createElement('button');b.textContent='Register';b.onclick=async()=>{
+      const x=await call('/api/opportunities/'+o.id+'/register',{method:'POST',headers:h()});
+      show('msg',x.ok?'Registered for '+o.title+'.':x.body.error,x.ok);if(x.ok)load()};
+    d.appendChild(b);list.appendChild(d)});
+}
+async function post(){
+  const body={title:t.value,description:d.value,category:c.value,start:s.value?s.value+':00':null,location:l.value,capacity:+cap.value};
+  const r=await call('/api/opportunities',{method:'POST',headers:h(),body:JSON.stringify(body)});
+  show('postMsg',r.ok?'Opportunity posted.':r.body.error,r.ok);if(r.ok)load();
+}
+</script></body></html>
