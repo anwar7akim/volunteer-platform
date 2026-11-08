@@ -10,8 +10,8 @@
 | Preconditions | A volunteer account exists. The user is on the Sign In screen. |
 | Test Steps | 1. Enter the volunteer email and password<br>2. Click "Sign In" |
 | Expected Result | The volunteer dashboard opens. Only volunteer features show. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC001 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-002: Login - Valid Coordinator Credentials
@@ -24,8 +24,8 @@
 | Preconditions | A coordinator account exists. The user is on the Sign In screen. |
 | Test Steps | 1. Enter the coordinator email and password<br>2. Click "Sign In" |
 | Expected Result | The coordinator dashboard opens with opportunity management features. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC002 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-003: Login - Valid Administrator Credentials
@@ -38,8 +38,8 @@
 | Preconditions | An administrator account exists. The user is on the Sign In screen. |
 | Test Steps | 1. Enter the administrator email and password<br>2. Click "Sign In" |
 | Expected Result | The administrator dashboard opens with user management and program summaries. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC003 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-004: Login - Invalid Password
@@ -52,8 +52,8 @@
 | Preconditions | A volunteer account exists. The user is on the Sign In screen. |
 | Test Steps | 1. Enter a valid email and a wrong password<br>2. Click "Sign In" |
 | Expected Result | Login fails. A clear error message shows. The user stays on the Sign In screen. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC004 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-005: Login - Empty Required Fields
@@ -66,8 +66,8 @@
 | Preconditions | The user is on the Sign In screen. |
 | Test Steps | 1. Leave email and password empty<br>2. Click "Sign In" |
 | Expected Result | The system marks the required fields and shows an error. No login occurs. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC005 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-006: Role Restriction - Volunteer Cannot Access Coordinator Features
@@ -80,8 +80,8 @@
 | Preconditions | The user is logged in as a Volunteer. |
 | Test Steps | 1. Look for "Post an Opportunity" and "Attendance & Hours" in the navigation<br>2. Try to open the coordinator page directly (URL or menu) |
 | Expected Result | The features are hidden or access is denied. No coordinator data shows. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC006 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-007: Role Restriction - Coordinator Cannot Access Administrator Features
@@ -94,8 +94,8 @@
 | Preconditions | The user is logged in as a Coordinator. |
 | Test Steps | 1. Look for "Manage Coordinator Access" and "Program Overview" in the navigation<br>2. Try to open the administrator page directly |
 | Expected Result | Access is denied. No administrator data shows. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC007 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-008: Browse Opportunities - List Displays Details
@@ -108,8 +108,8 @@
 | Preconditions | The user is logged in as a Volunteer. At least three opportunities exist. |
 | Test Steps | 1. Open the Browse Opportunities page |
 | Expected Result | Each opportunity shows date, location, description, and remaining spaces. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC008 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-009: Search Opportunities - Matching Term
@@ -122,8 +122,8 @@
 | Preconditions | The user is logged in as a Volunteer. An opportunity titled "Food Bank Sorting" exists. |
 | Test Steps | 1. Open Browse Opportunities<br>2. Enter "Food Bank" in the search field |
 | Expected Result | Only matching opportunities show, including "Food Bank Sorting". |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC009 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-010: Search Opportunities - No Matches
@@ -136,8 +136,8 @@
 | Preconditions | The user is logged in as a Volunteer. |
 | Test Steps | 1. Open Browse Opportunities<br>2. Enter a term that matches nothing (e.g., "zzzzqq") |
 | Expected Result | A "no matches" message shows. The user can change the search or filters. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC010 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-011: Filter Opportunities - By Category or Date
@@ -150,8 +150,8 @@
 | Preconditions | The user is logged in as a Volunteer. Opportunities exist in more than one category or date. |
 | Test Steps | 1. Open Browse Opportunities<br>2. Select a filter value |
 | Expected Result | The list shows only opportunities that match the filter. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC011 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-012: View Opportunity Details
@@ -164,8 +164,8 @@
 | Preconditions | The user is logged in as a Volunteer. Opportunities exist. |
 | Test Steps | 1. Open Browse Opportunities<br>2. Select one opportunity |
 | Expected Result | The Opportunity Details page shows title, description, date, time, location, capacity, and a Register button. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC012 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-013: Register for Opportunity - Space Available
@@ -178,8 +178,8 @@
 | Preconditions | Logged in as a Volunteer. The opportunity has open spaces. The volunteer is not registered. |
 | Test Steps | 1. Open the opportunity details<br>2. Click "Register" |
 | Expected Result | A confirmation shows. The opportunity appears in Upcoming Registrations. Remaining spaces fall by one. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC013 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-014: Register for Opportunity - Duplicate Registration
@@ -192,8 +192,8 @@
 | Preconditions | Logged in as a Volunteer. The volunteer is already registered for the opportunity. |
 | Test Steps | 1. Open the same opportunity details<br>2. Click "Register" |
 | Expected Result | The system refuses and explains that the volunteer is already registered. No second record is created. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC014 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-015: Register for Opportunity - Capacity Reached
@@ -206,8 +206,8 @@
 | Preconditions | Logged in as a Volunteer. The opportunity has 0 remaining spaces. |
 | Test Steps | 1. Open the opportunity details<br>2. Click "Register" |
 | Expected Result | The system refuses and explains that the opportunity is full. No registration is saved. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC015 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-016: Register for Opportunity - Last Remaining Space
@@ -220,8 +220,8 @@
 | Preconditions | Logged in as a Volunteer. The opportunity has exactly 1 remaining space. |
 | Test Steps | 1. Register for the opportunity<br>2. Log in as a second volunteer and try to register |
 | Expected Result | The first volunteer registers. Remaining spaces show 0. The second volunteer is refused. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC016 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-017: Withdraw - More Than Three Days Before Event
@@ -234,8 +234,8 @@
 | Preconditions | Logged in as a Volunteer. The volunteer is registered for an event 7 days away. |
 | Test Steps | 1. Open My Volunteering<br>2. Select the opportunity and click "Withdraw"<br>3. Confirm |
 | Expected Result | The registration is removed. A confirmation shows. The space is available again. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC017 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-018: Withdraw - Within Three Days of Event
@@ -248,8 +248,8 @@
 | Preconditions | Logged in as a Volunteer. The volunteer is registered for an event 2 days away. |
 | Test Steps | 1. Open My Volunteering<br>2. Select the opportunity and click "Withdraw" |
 | Expected Result | Withdrawal is blocked. The message explains the three-day cutoff. The registration stays. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC018 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-019: Withdraw - Exactly Three Days Boundary
@@ -262,8 +262,8 @@
 | Preconditions | Logged in as a Volunteer. The volunteer is registered for an event exactly 72 hours away. |
 | Test Steps | 1. Open My Volunteering<br>2. Select the opportunity and click "Withdraw" |
 | Expected Result | Withdrawal is blocked because the event is not more than three days away. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC019 passed. |
+| Status | Pass |
 | Priority | Low |
 
 ## TC-020: My Volunteering - Upcoming and History
@@ -318,8 +318,8 @@
 | Preconditions | Logged in as a Coordinator. |
 | Test Steps | 1. Open Post an Opportunity<br>2. Enter title, description, future date, time, location, and capacity 10<br>3. Click "Post" |
 | Expected Result | The opportunity saves. It appears in the list that volunteers see. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC023 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-024: Create Opportunity - Missing Required Fields
@@ -332,8 +332,8 @@
 | Preconditions | Logged in as a Coordinator. |
 | Test Steps | 1. Open Post an Opportunity<br>2. Leave the title empty and fill other fields<br>3. Click "Post" |
 | Expected Result | The system explains the missing field. Nothing is saved. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC024 passed. |
+| Status | Pass |
 | Priority | High |
 
 ## TC-025: Create Opportunity - Invalid Date or Capacity
@@ -346,8 +346,8 @@
 | Preconditions | Logged in as a Coordinator. |
 | Test Steps | 1. Open Post an Opportunity<br>2. Enter a past date or a capacity of 0 or a negative number<br>3. Click "Post" |
 | Expected Result | The system rejects the input with a clear message. Nothing is saved. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC025 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-026: Edit Opportunity - Valid Change
@@ -360,8 +360,8 @@
 | Preconditions | Logged in as a Coordinator. An opportunity exists. |
 | Test Steps | 1. Open the opportunity for editing<br>2. Change the description<br>3. Click "Save" |
 | Expected Result | The change saves and shows in the opportunity list. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC026 passed. |
+| Status | Pass |
 | Priority | Medium |
 
 ## TC-027: Cancel Opportunity - Registered Volunteers Notified
@@ -528,6 +528,6 @@
 | Preconditions | Logged in as a Volunteer. The opportunity has open spaces. |
 | Test Steps | 1. Double-click "Register" quickly<br>2. Open My Volunteering |
 | Expected Result | Only one registration exists. Remaining spaces fall by one only. |
-| Actual Result | (To be filled after test execution) |
-| Status | (Pass/Fail/Blocked) |
+| Actual Result | As expected. Automated test TC038 passed. |
+| Status | Pass |
 | Priority | High |
