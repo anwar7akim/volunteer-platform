@@ -1,0 +1,8 @@
+package com.voluntier.model;
+
+/** Features that are limited by role (FR-001, NFR-004). */
+public enum Feature {
+    BROWSE_OPPORTUNITIES, REGISTER, WITHDRAW, VIEW_MY_VOLUNTEERING,
+    MANAGE_OPPORTUNITIES, RECORD_ATTENDANCE,
+    MANAGE_COORDINATOR_ACCESS, VIEW_PROGRAM_SUMMARIES
+}
